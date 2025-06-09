@@ -207,7 +207,7 @@ export default function RegisterPage() {
                   id="phone"
                   name="phone"
                   type="tel"
-                  placeholder="+57 300 123 4567"
+                  placeholder="+569 1234 5678"
                   value={values.phone}
                   onChange={handleChange}
                   className={formErrors.phone ? "border-red-500" : ""}
