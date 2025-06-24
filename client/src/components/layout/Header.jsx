@@ -54,14 +54,14 @@ export default function Header({ showSearch = true, showAuth = true }) {
           <span className="text-xl font-bold">H2OGo</span>
         </Link>
 
-        {showSearch && (
+        {/*}   {showSearch && (
           <form
             onSubmit={handleSearchSubmit}
             className="hidden md:flex flex-1 max-w-md mx-8 items-center gap-2" // Added gap-2 for spacing
           >
             <div className="relative flex-1">
               {" "}
-              {/* flex-1 to make input take available space */}
+              {/* flex-1 to make input take available space 
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
               <Input
                 type="search"
@@ -71,12 +71,12 @@ export default function Header({ showSearch = true, showAuth = true }) {
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
-            {/* Added an explicit submit button */}
+            {/* Added an explicit submit button
             <Button type="submit" size="sm">
               Buscar
             </Button>
           </form>
-        )}
+        )}*/}
 
         <div className="flex items-center space-x-4">
           <Link
