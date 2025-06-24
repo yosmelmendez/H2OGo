@@ -47,7 +47,7 @@ const limiter =
 app.use(limiter);
 
 // CORS
-const allowedOrigins = ["http://localhost:3000", "https://h2-o-go.vercel.app"];
+const allowedOrigins = [process.env.FRONTEND_URL, "http://localhost:3000"];
 
 app.use(
   cors({
