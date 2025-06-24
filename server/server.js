@@ -47,10 +47,23 @@ const limiter =
 app.use(limiter);
 
 // CORS
+const allowedOrigins = ["http://localhost:3000", "https://h2-o-go.vercel.app"];
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
-    credentials: true,
+    origin: function (origin, callback) {
+      // Permite peticiones sin 'origin' (ej. de Postman/curl o peticiones de mismo origen)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+        const msg =
+          "The CORS policy for this site does not allow access from the specified Origin.";
+        return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+    },
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Métodos permitidos
+    credentials: true, // Si usas cookies o encabezados de autorización
+    optionsSuccessStatus: 204,
   })
 );
 //app.use(cors());
