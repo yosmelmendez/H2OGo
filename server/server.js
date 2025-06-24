@@ -34,7 +34,7 @@ const limiter =
   process.env.NODE_ENV === "production"
     ? rateLimit({
         windowMs: 15 * 60 * 1000,
-        max: 100, // Producción: 100 solicitudes cada 15 minutos
+        max: 500, // Producción: 100 solicitudes cada 15 minutos
         message:
           "Demasiadas solicitudes desde esta IP, intenta de nuevo más tarde.",
       })
